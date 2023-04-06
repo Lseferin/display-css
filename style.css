@@ -1,0 +1,81 @@
+/* display: block; Posiciona o elemento ocupando todo o espaço possível. A tag p e div são padrões de display block*/
+/* display: inline; Posiciona o elemento ocupando o menor espaço possível. Se adequa ao elemento, propriedades de height e width não funcionam.*/
+/* display inline perde as propriedades de bloco (position, float), por isso o display inline-block resolve estas propriedades de bloco*/
+/* display inline-block; possui as propriedades de bloco, mas não ocupa a linha inteira, podendo ficar um lado a lado  */
+/* display: flex; flexível, permitindo definir como os elementos vão ser alinhados tanto horintalmente quanto verticalmente, e como se portar em casos de não ter espaço suficiente. */
+/* display: grid; display compoto por linhas e colunas, sendo possível definir o tamanho de cada espaço e espaçamento entre eles. */
+/* display: none; constroi o elemnto na dom, mas não renderiza na página */
+
+
+.container {
+    background-color: #eeeeee;
+    border: 2px solid red;
+    padding: 15px;
+    max-width: 300px;
+    height: 300px;
+    display: flex;
+    /* alinhamento horizontal */
+    justify-content: space-between;
+    /* alinhamento vertical */
+    align-items: center;
+    flex-wrap: wrap;
+    /* quando a area máxima for atingida, wrap joga os elementos em uma nova linha */
+}
+
+.item {
+    background-color: #cccccc;
+    border: 2px solid blue;
+    height: 50px;
+    width: 50px;
+}
+
+.box {
+    background-color: #ccc;
+    border: 2px solid blue;
+    height: 50px;
+    /* quando não possui uma largura delimitada, ele ocupa o mínimo de espaço possível */
+    flex-basis: 30px;
+    /* flex-basis delimita um valor inicial para cada elemento, neste caso todos iniciariam com 30px de largura*/
+}
+
+#item-1 {
+    flex-grow: 2;
+    /* tem a proporção de 2, sempre maior que os abaixo  */
+}
+
+#item-2,
+#item-3 {
+    flex: 1;
+    /* item 2 e 3 ocupam sempre a proporção de 1, ou seja, sempre a metade do item-1 */
+}
+
+#item-3 {
+    flex-shrink: 2;
+    /* diminui duas vezes mais proporcionalmente do que os outros elementos. Essa propriedade define a proporção com que um item deve encolher caso seja necessário */
+}
+
+.d-inline{
+    display: inline;
+    background-color: red;
+    /* height e width não funcionam em display inline */
+}
+
+.d-block {
+    display: block;
+    height: 100px;
+    width: 100px;
+    margin-bottom: 15px;
+    background-color: green;
+}
+
+.d-inline-block {
+    display: inline-block;
+    height: 100px;
+    width: 100px;
+    margin-bottom: 15px;
+    background-color: green;
+}
+
+.d-none{
+    display: none;
+}
